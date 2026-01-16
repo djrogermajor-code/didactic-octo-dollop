@@ -1,0 +1,30 @@
+[
+  {
+    "id": "studio-nova",
+    "name": "Studio Nova UX",
+    "description": "Product discovery, UX audits, and rapid prototyping for SaaS teams.",
+    "tags": ["UX", "Product", "Design Sprints"],
+    "stripeCheckoutUrl": "https://buy.stripe.com/test_00"
+  },
+  {
+    "id": "cloudlane",
+    "name": "Cloudlane DevOps",
+    "description": "Infrastructure automation, CI/CD pipelines, and observability setup.",
+    "tags": ["DevOps", "AWS", "Terraform"],
+    "stripeCheckoutUrl": "https://buy.stripe.com/test_01"
+  },
+  {
+    "id": "brightbeam",
+    "name": "Brightbeam Marketing",
+    "description": "Lifecycle email, paid acquisition, and growth experiments for B2B startups.",
+    "tags": ["Marketing", "Growth", "Lifecycle"],
+    "stripeCheckoutUrl": "https://buy.stripe.com/test_02"
+  },
+  {
+    "id": "atlas-ai",
+    "name": "Atlas AI Studio",
+    "description": "Custom AI copilots, prompt engineering, and model evaluation.",
+    "tags": ["AI", "LLM", "Automation"],
+    "stripeCheckoutUrl": "https://buy.stripe.com/test_03"
+  }
+]

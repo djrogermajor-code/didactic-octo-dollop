@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antigravity Marketplace MVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: "#f5f8ff",
+                500: "#4f46e5",
+                600: "#4338ca",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <div class="min-h-screen">
+      <header class="bg-white shadow-sm">
+        <div class="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-2">
+            <p class="text-sm uppercase tracking-widest text-brand-600">Antigravity Marketplace</p>
+            <h1 class="text-3xl font-semibold text-gray-900 sm:text-4xl">
+              Discover vetted service providers
+            </h1>
+            <p class="text-base text-gray-600">
+              Browse, request, and connect. Hooks are ready for AI-powered matching and webhook delivery.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+        <section class="mb-10 rounded-2xl bg-white p-6 shadow-sm">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 class="text-xl font-semibold text-gray-900">Request a provider</h2>
+              <p class="text-sm text-gray-500">Select a provider card to open the request form.</p>
+            </div>
+            <div class="rounded-full bg-brand-50 px-4 py-2 text-sm text-brand-600">
+              Local-only MVP · No backend required
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 lg:grid-cols-[2fr,1fr]">
+          <div>
+            <div id="provider-list" class="grid gap-6 md:grid-cols-2"></div>
+          </div>
+
+          <aside>
+            <div class="sticky top-6 space-y-6">
+              <div class="rounded-2xl bg-white p-6 shadow-sm">
+                <h3 class="text-lg font-semibold text-gray-900">Request Form</h3>
+                <p class="text-sm text-gray-500">Your request is stored locally for now.</p>
+                <form id="request-form" class="mt-4 space-y-4">
+                  <div>
+                    <label class="text-sm font-medium text-gray-700" for="requester-name">Your name</label>
+                    <input
+                      class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      id="requester-name"
+                      name="requesterName"
+                      placeholder="Ada Lovelace"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium text-gray-700" for="requester-email">Email</label>
+                    <input
+                      class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      id="requester-email"
+                      name="requesterEmail"
+                      type="email"
+                      placeholder="ada@example.com"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium text-gray-700" for="request-message">Message</label>
+                    <textarea
+                      class="mt-1 min-h-[120px] w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      id="request-message"
+                      name="requestMessage"
+                      placeholder="Share your goals, timeline, and deliverables."
+                      required
+                    ></textarea>
+                  </div>
+                  <input type="hidden" id="provider-id" name="providerId" />
+                  <div class="rounded-lg bg-gray-50 p-3 text-xs text-gray-500" id="selected-provider">
+                    Select a provider card to start.
+                  </div>
+                  <button
+                    class="w-full rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-600"
+                    type="submit"
+                  >
+                    Submit request
+                  </button>
+                </form>
+              </div>
+
+              <div class="rounded-2xl bg-white p-6 shadow-sm">
+                <h3 class="text-lg font-semibold text-gray-900">AI-ready hooks</h3>
+                <p class="mt-2 text-sm text-gray-500">
+                  Placeholder module exposes functions for GPT/OpenPipe/Together. Replace with real calls when ready.
+                </p>
+                <pre class="mt-4 overflow-x-auto rounded-lg bg-gray-900 p-4 text-xs text-gray-100">
+// TODO: plug in your AI provider
+// Example: ai.matchProviders(userInput, providers)
+                </pre>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
