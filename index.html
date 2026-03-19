@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordSlap</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">🎮 Party Word Game Prototype</p>
+          <h1>WordSlap</h1>
+          <p class="subtitle">
+            A real-time category battle where humans and bots race to fill every
+            answer slot with words that start with the round letter.
+          </p>
+        </div>
+        <button id="start-round" class="primary-button">Start Demo Round</button>
+      </header>
+
+      <main class="layout">
+        <section class="panel">
+          <h2>Match Setup</h2>
+          <div class="setup-grid">
+            <label>
+              Human Players
+              <input id="human-count" type="range" min="2" max="12" value="4" />
+              <span id="human-count-value">4 players</span>
+            </label>
+            <label>
+              Bot Difficulty
+              <select id="bot-difficulty">
+                <option value="casual">Casual</option>
+                <option value="competitive" selected>Competitive</option>
+                <option value="chaos">Chaos</option>
+              </select>
+            </label>
+          </div>
+          <div class="stat-row">
+            <article>
+              <span>Total Seats</span>
+              <strong>12</strong>
+            </article>
+            <article>
+              <span>Bots Added</span>
+              <strong id="bot-count">8</strong>
+            </article>
+            <article>
+              <span>Round Timer</span>
+              <strong>45s</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Round Flow</h2>
+          <ol class="flow-list">
+            <li><strong>Coin flip</strong> picks the starting player.</li>
+            <li><strong>Alphabet wheel</strong> spins fast or slow to choose a letter.</li>
+            <li><strong>Players answer</strong> 9 categories before the timer ends.</li>
+            <li><strong>Scoring</strong> rewards speed, valid spelling, uniqueness, and full boards.</li>
+          </ol>
+          <div class="round-status" id="round-status">
+            Press <strong>Start Demo Round</strong> to simulate the opening turn.
+          </div>
+        </section>
+
+        <section class="panel categories-panel">
+          <div class="panel-heading">
+            <h2>Categories</h2>
+            <div class="letter-badge">Letter <span id="round-letter">?</span></div>
+          </div>
+          <div class="category-grid" id="category-grid"></div>
+        </section>
+
+        <section class="panel leaderboard-panel">
+          <div class="panel-heading">
+            <h2>Live Leaderboard</h2>
+            <span class="pill" id="difficulty-pill">Competitive Bots</span>
+          </div>
+          <div id="leaderboard" class="leaderboard"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
