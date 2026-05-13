@@ -1,0 +1,12 @@
+{
+  "name": "ii-live-platform",
+  "version": "1.0.0",
+  "description": "I&I Live Caribbean streaming platform prototype with seven channels, back channel, archive, and YouTube access.",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 5173",
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
